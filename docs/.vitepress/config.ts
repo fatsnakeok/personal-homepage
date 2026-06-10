@@ -34,7 +34,7 @@ export default defineConfig({
     motto: '人生最大的挑战是发现自己是谁，而第二大的挑战是对所发现的感到满意。',
 
     socialLinks: [
-      { icon: 'github', link: 'https://gitee.com/你的用户名' }
+      { icon: 'github', link: 'https://github.com/fatsnakeok?tab=repositories' }
     ]
   },
 
