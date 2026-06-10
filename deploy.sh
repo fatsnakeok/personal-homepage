@@ -1,17 +1,17 @@
 #!/bin/bash
 
 # =========================================
-# 空杯成长笔记 - 发布脚本
+# 空杯成长笔记 - 发布脚本 (Gitee Pages)
 # =========================================
 
 set -e
 
 echo "========================================="
-echo "  空杯成长笔记 - 发布脚本"
+echo "  空杯成长笔记 - 发布脚本 (Gitee)"
 echo "========================================="
 
 # 检查环境
-echo "[1/7] 检查环境..."
+echo "[1/6] 检查环境..."
 if [ ! -d "docs/.vitepress" ]; then
     echo "❌ 错误: 未找到 docs/.vitepress 目录"
     exit 1
@@ -22,19 +22,19 @@ if [ ! -f "package.json" ]; then
 fi
 
 # 安装依赖
-echo "[2/7] 安装依赖..."
+echo "[2/6] 安装依赖..."
 npm install
 
 # 清理旧的 dist
-echo "[3/7] 清理旧的构建文件..."
+echo "[3/6] 清理旧的构建文件..."
 rm -rf docs/.vitepress/dist
 
 # 构建项目
-echo "[4/7] 构建项目..."
+echo "[4/6] 构建项目..."
 npm run docs:build
 
 # 验证构建结果
-echo "[5/7] 验证构建结果..."
+echo "[5/6] 验证构建结果..."
 if [ ! -f "docs/.vitepress/dist/index.html" ]; then
     echo "❌ 错误: 构建失败，未生成 index.html"
     exit 1
@@ -52,12 +52,19 @@ cd docs/.vitepress/dist
 
 # 初始化 Git（如果需要）
 if [ ! -d ".git" ]; then
-    echo "[6/7] 初始化 Git 仓库..."
+    echo "[6/6] 初始化 Git 仓库..."
     git init
-    git branch -M gh-pages
-    git remote add origin git@github.com:fatsnakeok/personal-homepage.git
+    git branch -M main
+    # 检测是否已有 Gitee 远程仓库配置
+    if git remote get-url origin &>/dev/null; then
+        echo "✅ 已配置远程仓库"
+    else
+        echo "请先配置 Gitee 远程仓库地址:"
+        echo "  git remote add origin git@gitee.com:你的用户名/仓库名.git"
+        exit 1
+    fi
 else
-    echo "[6/7] 更新文件..."
+    echo "[6/6] 更新文件..."
 fi
 
 # 添加所有文件
@@ -78,16 +85,19 @@ COMMIT_MSG="${1:-更新站点内容}"
 git commit -m "$COMMIT_MSG"
 
 # 推送到远程
-echo "[7/7] 推送到 GitHub..."
-git push -u origin gh-pages --force
+echo "推送代码到 Gitee..."
+git push origin main --force
 
 echo ""
 echo "========================================="
-echo "  ✅ 部署完成！"
+echo "  ✅ 推送完成！"
 echo "========================================="
 echo ""
-echo "请在 GitHub 上确认 Pages 配置:"
-echo "Settings → Pages → Source: gh-pages / (root)"
+echo "📋 下一步操作:"
+echo "1. 登录 Gitee 仓库"
+echo "2. 进入 【服务 → Gitee Pages】"
+echo "3. 点击【更新】按钮部署"
 echo ""
-echo "访问: https://fatsnakeok.github.io/personal-homepage/"
+echo "部署完成后访问:"
+echo "  https://你的用户名.gitee.io/personal-homepage/"
 echo ""

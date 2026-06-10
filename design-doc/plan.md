@@ -11,7 +11,7 @@ personal_homepage/
 ├── article/                 # 文章详情模块
 ├── content/                 # 内容管理模块
 ├── style/                   # 视觉风格模块
-└── ci/                      # CI/CD 模块
+└── deploy/                  # 部署模块
 ```
 
 ## 2. 模块拆解
@@ -109,18 +109,15 @@ personal_homepage/
 | 间距系统 | 统一的 margin / padding / gap 规范 |
 | 响应式断点 | 768px / 1024px 断点的媒体查询定义 |
 
-### 2.9 CI/CD 模块（ci）
+### 2.9 部署模块（deploy）
 
-负责自动构建与发布流程。
+负责站点构建与发布流程。
 
 | 子模块 | 职责 |
 |--------|------|
-| 工作流定义 | `.github/workflows/deploy.yml` 触发条件与步骤 |
-| 环境准备 | 检出代码、安装运行时、安装依赖 |
-| 质量检查 | Lint、Markdown 校验（可选） |
-| 构建步骤 | 执行站点构建，输出静态文件 |
-| 部署步骤 | 将构建产物部署到 GitHub Pages |
-| 回滚机制 | 重新运行历史工作流或 revert 部署 |
+| 构建脚本 | `deploy.sh` 一键构建并推送代码 |
+| 部署配置 | Gitee Pages 服务配置 |
+| 回滚机制 | 重新部署历史版本或 revert 代码 |
 
 ## 3. 模块依赖关系
 
@@ -135,13 +132,13 @@ core ─────────────────────────
   │                                        │
   ├── style（被所有模块依赖）                │
   │                                        │
-  └── ci（独立于运行时，构建时依赖 core） ◄──┘
+  └── deploy（独立于运行时，构建时依赖 core） ◄──┘
 ```
 
 - **style** 是全局基础模块，所有 UI 模块均依赖其色彩、字体、间距定义
 - **content** 是数据层，waterfall 和 article 模块从中读取文章数据
 - **layout** 编排 sidebar、waterfall、article 的页面位置
-- **ci** 在构建时依赖 core 的构建配置，运行时无依赖
+- **deploy** 在构建时依赖 core 的构建配置，运行时无依赖
 
 ## 4. 页面与模块映射
 
@@ -158,5 +155,5 @@ core ─────────────────────────
 ```
 posts/*.md ──→ content 解析 ──→ 构建引擎 ──→ 静态 HTML/CSS/JS
                                               │
-ci 触发 ──→ 环境准备 ──→ 质量检查 ──→ 构建 ──→ 部署到 GitHub Pages
+代码推送 ──→ 构建 ──→ 部署到 Gitee Pages
 ```

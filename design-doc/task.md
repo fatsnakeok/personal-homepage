@@ -7,15 +7,16 @@
 | 静态站点生成器 | VitePress | 基于 Vite，构建快；Vue 组件化便于瀑布流等交互开发；Markdown 原生支持 |
 | 样式方案 | Tailwind CSS | 原子化 CSS，快速实现扁平化风格；与 VitePress 集成良好 |
 | 代码高亮 | Shiki | VitePress 内置，支持多主题 |
-| 部署 | GitHub Pages + GitHub Actions | 免费托管，自动 CI/CD |
+| 部署 | Gitee Pages + Gitee Go | 国内访问快，免费托管，支持自动部署 |
 
 ## 2. 目录结构
 
 ```
 personal_homepage/
 ├── .github/
-│   └── workflows/
-│       └── deploy.yml              # CI/CD 工作流
+│   └── workflows/                  # Gitee Go CI/CD 配置（如需要）
+├── .gitee/
+│   └── workflows/                  # Gitee 流水线配置
 ├── docs/                           # VitePress 项目根目录
 │   ├── .vitepress/
 │   │   ├── config.ts               # 站点配置 + 侧边栏 + 导航
@@ -70,7 +71,7 @@ personal_homepage/
 | `title` | 站名（如"XX的个人空间"） | 浏览器标签页标题 |
 | `description` | 站点描述 | SEO meta description |
 | `lang` | `zh-CN` | 页面语言 |
-| `base` | `/` 或仓库名 | GitHub Pages 部署路径 |
+| `base` | `/` 或仓库名 | Gitee Pages 部署路径 |
 | `lastUpdated` | `true` | 显示文章最后更新时间 |
 | `sitemap.hostname` | 站点域名 | 生成 sitemap |
 
@@ -562,71 +563,21 @@ interface ArticleMeta {
 
 ---
 
-### 3.10 CI/CD 模块（ci）
+### 3.10 部署模块（deploy）
 
-#### 3.10.1 工作流文件 — `.github/workflows/deploy.yml`
+#### 3.10.1 部署方式
 
-**触发条件**：
+使用 Gitee Pages 服务，部署方式选择 **Gitee Pages (main 分支)**。
 
-```yaml
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-```
+#### 3.10.2 部署配置
 
-**权限**：
+**前提条件**：
+1. 代码仓库已推送至 Gitee
+2. 在 Gitee 仓库的 **服务 → Gitee Pages** 中开启服务
+3. 选择部署分支为 `main`，部署目录为 `/` 或 `/docs/.vitepress/dist`
 
-```yaml
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-```
+#### 3.10.3 一键发布脚本 — `deploy.sh`
 
-**并发控制**：
-
-```yaml
-concurrency:
-  group: pages
-  cancel-in-progress: false
-```
-
-#### 3.10.2 流水线 Job 设计
-
-**Job: build**
-
-| 步骤 | Action / 命令 | 说明 |
-|------|---------------|------|
-| Checkout | `actions/checkout@v4` | 检出代码 |
-| Setup Node | `actions/setup-node@v4` | `node-version: 20` |
-| Install deps | `npm ci` | 安装依赖 |
-| Build | `npm run docs:build` | 构建站点 |
-| Upload artifact | `actions/upload-pages-artifact@v3` | 上传 `dist/` 目录 |
-
-**Job: deploy**
-
-| 步骤 | Action / 命令 | 说明 |
-|------|---------------|------|
-| Deploy | `actions/deploy-pages@v4` | 部署到 GitHub Pages |
-
-**条件**：`deploy` Job 仅在 `main` 分支 push 时执行，PR 仅运行 `build`
-
-#### 3.10.3 环境变量
-
-| 变量 | 值 | 位置 |
-|------|-----|------|
-| `NODE_VERSION` | `20` | workflow env |
-| `BUILD_DIR` | `dist` | workflow env |
-
-#### 3.10.4 回滚操作
-
-1. 进入 GitHub Actions 页面，找到上一次成功部署的工作流
-2. 点击 "Re-run all jobs" 重新执行
-3. 或 `git revert` 对应 commit 后推送至 `main` 触发新部署
-
-#### 3.10.5 一键发布脚本 — `deploy.sh`
 ```bash
 #!/bin/bash
 echo "开始构建并部署..."
@@ -635,7 +586,56 @@ git add dist/
 git commit -m "Deploy: 更新站点内容"
 git push origin main
 echo "部署完成！"
+echo "请在 Gitee Pages 页面手动更新部署，或使用 Gitee Go 流水线自动部署"
 ```
+
+#### 3.10.4 Gitee Pages 手动部署
+
+1. 进入 Gitee 仓库首页
+2. 点击 **服务 → Gitee Pages**
+3. 点击 **更新** 按钮
+4. 等待部署完成，访问 `https://用户名.gitee.io/仓库名/`
+
+#### 3.10.5 Gitee Go 自动部署（可选）
+
+如需自动部署，可在 `.gitee/workflows/` 目录下添加流水线配置文件：
+
+```yaml
+# .gitee/workflows/deploy.yml
+name: Deploy to Gitee Pages
+on: [push]
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run docs:build
+      - run: |
+          cd docs/.vitepress/dist
+          git init
+          git config user.name "CI"
+          git config user.email "ci@gitee.com"
+          git add -A
+          git commit -m "Build output"
+      - name: Deploy to Gitee Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          external_repository: 用户名/仓库名
+          publish_dir: ./docs/.vitepress/dist
+          publish_branch: gh-pages
+          user_name: 'CI'
+          user_email: 'ci@gitee.com'
+```
+
+#### 3.10.6 回滚操作
+
+1. 进入 Gitee Pages 设置页面
+2. 选择之前的部署版本，点击 **更新** 恢复
+3. 或使用 `git revert` 回滚代码后重新部署
 
 ---
 
