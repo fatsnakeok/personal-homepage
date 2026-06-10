@@ -5,7 +5,7 @@ export default defineConfig({
   title: '空杯成长笔记',
   description: '保持空杯心态，持续学习成长',
   lang: 'zh-CN',
-  base: '/',
+  base: '/personal-homepage/',
   lastUpdated: true,
   
   head: [
