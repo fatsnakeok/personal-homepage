@@ -6,38 +6,57 @@ title: 个人简历
 </script>
 
 <div class="resume-page">
-  <a href="/resume.pdf" download="个人简历.pdf" class="download-btn">
+  <a href="/assets/images/resume.pdf" download="Java后端开发.pdf" class="download-btn">
     <span class="btn-icon">⬇</span>
     <span class="btn-text">下载 PDF</span>
   </a>
 
   <header class="resume-header">
     <div class="header-decoration"></div>
-    <h1 class="resume-name">空杯学习者</h1>
-    <p class="resume-title">全栈开发工程师</p>
+    <h1 class="resume-name">胖蛇</h1>
+    <p class="resume-title">Java 后端开发工程师</p>
     <div class="resume-contact">
-      <span class="contact-item">📧 email@example.com</span>
-      <span class="contact-item">📱 138-xxxx-xxxx</span>
-      <span class="contact-item">🔗 github.com/username</span>
+      <span class="contact-item">📧 hollboy24008@163.com</span>
+      <span class="contact-item">📱 1850325****</span>
+      <span class="contact-item">📍 大连市</span>
     </div>
   </header>
 
   <section class="resume-section">
     <h2 class="section-title">
       <span class="section-icon">🎓</span>
-      教育经历
+      教育背景
     </h2>
     <div class="section-content">
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="item-header">
-            <h3 class="item-title">XX 大学</h3>
-            <span class="item-date">2015 - 2019</span>
+            <h3 class="item-title">东北大学</h3>
+            <span class="item-date">2008.9 - 2012.6</span>
           </div>
-          <p class="item-subtitle">计算机科学与技术 · 学士</p>
+          <p class="item-subtitle">软件工程 · 本科</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="resume-section">
+    <h2 class="section-title">
+      <span class="section-icon">🛠️</span>
+      专业技能
+    </h2>
+    <div class="section-content">
+      <ul class="skill-list-item">
+        <li><strong>编程语言：</strong>掌握 Java 编程语言的基础类库，了解集合框架、多线程、并发编程等相关知识</li>
+        <li><strong>框架：</strong>熟悉 SpringBoot、Spring MVC、Mybatis、常用框架；熟悉 SpringCloudAlibaba 微服务框架</li>
+        <li><strong>云服务：</strong>熟悉阿里云 ECS、容器镜像服务 ACR、Serverless 应用引擎 SAE、对象存储 OSS、视频点播、MNS 及腾讯云点播、EO 边缘节点加速等云服务产品</li>
+        <li><strong>数据库：</strong>熟悉 MySQL 语法、索引、事务以及 Redis 缓存</li>
+        <li><strong>中间件：</strong>Redis、RocketMQ、Nacos、Dubbo、Sentinel、Shenyu、ES，具备中间件调优、架构升级实战经验</li>
+        <li><strong>前端：</strong>Vue，熟练使用 iview，前后端分离架构开发经验丰富</li>
+        <li><strong>项目管理：</strong>持有 PMP 项目管理认证，具备小团队短期项目管理经验</li>
+        <li><strong>架构经验：</strong>深耕中台架构开发，主导公司技术架构升级改造，抽象业务模型并搭建业务中台</li>
+      </ul>
     </div>
   </section>
 
@@ -51,95 +70,41 @@ title: 个人简历
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="item-header">
-            <h3 class="item-title">XX 公司</h3>
-            <span class="item-date">2022 - 至今</span>
+            <h3 class="item-title">某(大连)教育科技有限公司</h3>
+            <span class="item-date">2016.10 - 至今</span>
           </div>
-          <p class="item-subtitle">高级前端开发工程师</p>
+          <p class="item-subtitle">Java 开发工程师</p>
           <ul class="item-descriptions">
-            <li>负责公司核心产品的前端架构设计与开发</li>
-            <li>推动团队采用 Vue 3 + TypeScript 技术栈</li>
-            <li>优化页面性能，提升用户体验</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="item-header">
-            <h3 class="item-title">XX 公司</h3>
-            <span class="item-date">2019 - 2022</span>
-          </div>
-          <p class="item-subtitle">前端开发工程师</p>
-          <ul class="item-descriptions">
-            <li>参与多个项目的开发与维护</li>
-            <li>负责前端页面切图与交互实现</li>
-            <li>协助后端完成接口对接</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="resume-section">
-    <h2 class="section-title">
-      <span class="section-icon">🛠️</span>
-      技能特长
-    </h2>
-    <div class="section-content">
-      <div class="skill-grid">
-        <div class="skill-card">
-          <h3 class="skill-title">前端技术</h3>
-          <p class="skill-list">Vue / React / TypeScript / JavaScript / HTML / CSS</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="skill-title">框架工具</h3>
-          <p class="skill-list">Vite / Webpack / Tailwind CSS / Element Plus</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="skill-title">后端技术</h3>
-          <p class="skill-list">Node.js / Python / MySQL / MongoDB</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="skill-title">其他工具</h3>
-          <p class="skill-list">Git / Docker / Linux / CI/CD</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="resume-section">
-    <h2 class="section-title">
-      <span class="section-icon">🚀</span>
-      项目经验
-    </h2>
-    <div class="section-content">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="item-header">
-            <h3 class="item-title">个人博客系统</h3>
-            <span class="item-date">2024</span>
-          </div>
-          <p class="item-subtitle">技术栈：Vue 3 + VitePress + Tailwind CSS</p>
-          <ul class="item-descriptions">
-            <li>基于 VitePress 搭建的静态博客系统</li>
-            <li>实现文章瀑布流展示与标签筛选功能</li>
-            <li>采用响应式设计，适配多端设备</li>
-          </ul>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="item-header">
-            <h3 class="item-title">企业管理系统</h3>
-            <span class="item-date">2023</span>
-          </div>
-          <p class="item-subtitle">技术栈：Vue 3 + Element Plus + Pinia</p>
-          <ul class="item-descriptions">
-            <li>负责系统前端架构设计与核心模块开发</li>
-            <li>实现权限管理、数据可视化等功能</li>
-            <li>优化首屏加载性能，提升用户体验</li>
+            <li><strong>在线教育系统架构改造与系统保障</strong>（中台架构组 | 2023.08 - 至今）
+              <ul>
+                <li>负责云服务 OSS 存储进行优化改造（转换、冷存、EO边缘节点加速等），为公司节省存储费用 60%</li>
+                <li>参与业务功能需求评审，结合中台架构特点给出技术解决方案，降低开发成本与周期</li>
+                <li>完善公司业务功能可观测性，建立事件驱动后台操作行为记录、定时任务执行异常报警机制</li>
+                <li>负责公司中间件日常升级维护工作，对中间件调优已达到降本增效的目的</li>
+                <li>基于阿里云 DTS、AnalyticDB，搭建数据中心，赋能企业营销、运营数据分析</li>
+                <li>基于阿里云 Serverless 应用引擎 SAE，搭建企业级云原生微服务集群</li>
+              </ul>
+            </li>
+            <li><strong>在线教育老系统（PHP）迁移</strong>（业务开发部门 | SE角色 | 2022.06 - 2023.07）
+              <ul>
+                <li>对老系统进行业务功能梳理、拆解、剥离，带领7人开发团队完成老系统功能、异构数据迁移工作</li>
+                <li>负责团队招聘面试与组建工作，并辅导团队成员职称升级答辩一次性通过</li>
+                <li>配合产品经理完成开发任务拆解与分配，制定正式上线实施方案</li>
+              </ul>
+            </li>
+            <li><strong>后端中间件升级改造与前端公共组件开发</strong>（中台架构组 | 2021 - 2022.06）
+              <ul>
+                <li>独立完成前端通用 Vue 组件封装，包括富文本、文件上传等高频组件</li>
+                <li>主导公司技术架构升级改造，完成 Dubbo、Nacos、RocketMQ、Sentinel 等中间件的架构升级与落地</li>
+                <li>建立新人入职培训流程及编写相关培训文件</li>
+              </ul>
+            </li>
+            <li><strong>业务中台体系搭建</strong>（后端开发组 | 2016 - 2020）
+              <ul>
+                <li>分析公司业务特点，抽象核心业务模型，搭建公司业务中台，实现业务能力的复用与沉淀</li>
+                <li>基于 Java+SpringBoot 技术栈完成后端业务接口开发</li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
@@ -153,9 +118,7 @@ title: 个人简历
     </h2>
     <div class="section-content">
       <p class="self-intro">
-        保持空杯心态，持续学习成长。具有扎实的前端开发基础和良好的代码编写习惯，
-        善于沟通协作，能够快速融入团队并解决实际问题。对新技术保持热情，
-        注重技术深度与广度的结合，追求高质量的技术输出。
+        13年开发经验，其中4年的大型互联网在线教育架构设计和1年小团队管理经验，曾经经历过注册用户千万级、日活用户十万级的在线教育系统。带领团队负责过公司核心业务老系统（PHP）迁移工作及核心新业务链设计与开发，日常管理、维护 32+ 个微服务项目、2个前端项目及多个中间件。极强的责任心，良好的沟通能力，乐观开朗，能够快速融入团队，有良好的编码能力，对代码质量、可读性有所追求。
       </p>
     </div>
   </section>
@@ -194,241 +157,33 @@ title: 个人简历
   box-shadow: var(--shadow-lg);
 }
 
-.btn-icon {
-  font-size: 1rem;
+.skill-list-item {
+  list-style: none;
+  padding: 0;
 }
 
-.resume-header {
-  text-align: center;
-  margin-bottom: 48px;
-  padding: 40px;
-  background: var(--color-card);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
-}
-
-.header-decoration {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: linear-gradient(90deg, var(--color-primary), #6366F1, var(--color-accent));
-}
-
-.resume-name {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 16px 0 8px 0;
-}
-
-.resume-title {
-  font-size: 1.125rem;
-  color: var(--color-primary);
-  margin: 0 0 20px 0;
-  font-weight: 500;
-}
-
-.resume-contact {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.resume-section {
-  margin-bottom: 40px;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 24px 0;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--color-border);
-}
-
-.section-icon {
-  font-size: 1.5rem;
-}
-
-.section-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 24px;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  background: var(--color-primary);
-  border-radius: 50%;
-  border: 3px solid var(--color-bg);
-  box-shadow: 0 0 0 2px var(--color-primary);
-}
-
-.timeline-content {
-  background: var(--color-card);
-  padding: 20px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-normal);
-}
-
-.timeline-content:hover {
-  box-shadow: var(--shadow-sm);
-  border-color: var(--color-accent-light);
-}
-
-.item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 4px;
-}
-
-.item-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0;
-}
-
-.item-date {
-  font-size: 0.85rem;
-  color: var(--color-text-light);
-}
-
-.item-subtitle {
-  font-size: 0.95rem;
-  color: var(--color-primary);
-  margin: 0 0 12px 0;
-  font-weight: 500;
-}
-
-.item-descriptions {
-  margin: 0;
-  padding-left: 20px;
-  font-size: 0.95rem;
-  color: var(--color-text-secondary);
+.skill-list-item li {
+  margin-bottom: 12px;
   line-height: 1.8;
+  padding-left: 0;
 }
 
-.item-descriptions li {
+.skill-list-item ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.skill-list-item ul li {
   margin-bottom: 6px;
 }
 
-.item-descriptions li:last-child {
-  margin-bottom: 0;
+.item-descriptions ul {
+  list-style-type: disc;
 }
 
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-}
-
-.skill-card {
-  background: var(--color-card);
-  padding: 20px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-normal);
-}
-
-.skill-card:hover {
-  border-color: var(--color-accent-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.skill-title {
+.resume-subtitle {
   font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 10px 0;
-}
-
-.skill-list {
-  font-size: 0.9rem;
   color: var(--color-text-secondary);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.self-intro {
-  font-size: 0.95rem;
-  color: var(--color-text);
-  line-height: 2;
-  margin: 0;
-  padding: 24px;
-  background: var(--color-card);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-accent);
-}
-
-@media print {
-  .download-btn {
-    display: none;
-  }
-
-  .resume-page {
-    padding: 20px;
-  }
-
-  .resume-header {
-    box-shadow: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .download-btn {
-    position: static;
-    width: fit-content;
-    margin: 0 auto 24px auto;
-  }
-
-  .resume-name {
-    font-size: 1.75rem;
-  }
-
-  .resume-contact {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .item-header {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .skill-grid {
-    grid-template-columns: 1fr;
-  }
+  margin-top: 4px;
 }
 </style>

@@ -1,0 +1,18 @@
+# 安全检查脚本（保留在仓库但不在构建输出中）
+scripts/security-check.sh
+
+# 构建输出
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# 依赖
+node_modules/
+
+# IDE
+.idea/
+
+# macOS
+.DS_Store
+
+# 日志
+*.log
