@@ -47,19 +47,19 @@ defineProps<{
       </div>
       
       <nav class="hero-nav">
-        <a href="/" class="nav-link">
+        <a href="/personal-homepage/" class="nav-link">
           <span class="nav-icon">⌂</span>
           <span class="nav-text">首页</span>
         </a>
-        <a href="/blog" class="nav-link">
+        <a href="/personal-homepage/blog" class="nav-link">
           <span class="nav-icon">☰</span>
           <span class="nav-text">博客</span>
         </a>
-        <a href="/resume" class="nav-link">
+        <a href="/personal-homepage/resume" class="nav-link">
           <span class="nav-icon">◎</span>
           <span class="nav-text">简历</span>
         </a>
-        <a href="/about" class="nav-link">
+        <a href="/personal-homepage/about" class="nav-link">
           <span class="nav-icon">◉</span>
           <span class="nav-text">关于</span>
         </a>
@@ -68,19 +68,19 @@ defineProps<{
     
     <!-- 移动端底部导航 -->
     <nav class="mobile-nav">
-      <a href="/" class="mobile-nav-link">
+      <a href="/personal-homepage/" class="mobile-nav-link">
         <span class="mobile-nav-icon">⌂</span>
         <span class="mobile-nav-text">首页</span>
       </a>
-      <a href="/blog" class="mobile-nav-link">
+      <a href="/personal-homepage/blog" class="mobile-nav-link">
         <span class="mobile-nav-icon">☰</span>
         <span class="mobile-nav-text">博客</span>
       </a>
-      <a href="/resume" class="mobile-nav-link">
+      <a href="/personal-homepage/resume" class="mobile-nav-link">
         <span class="mobile-nav-icon">◎</span>
         <span class="mobile-nav-text">简历</span>
       </a>
-      <a href="/about" class="mobile-nav-link">
+      <a href="/personal-homepage/about" class="mobile-nav-link">
         <span class="mobile-nav-icon">◉</span>
         <span class="mobile-nav-text">关于</span>
       </a>
