@@ -14,10 +14,10 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: '博客', link: '/blog' },
-      { text: '简历', link: '/resume' },
-      { text: '关于', link: '/about' }
+      { text: '首页', link: '/personal-homepage/' },
+      { text: '博客', link: '/personal-homepage/blog' },
+      { text: '简历', link: '/personal-homepage/resume' },
+      { text: '关于', link: '/personal-homepage/about' }
     ],
 
     footer: {
