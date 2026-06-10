@@ -30,7 +30,7 @@ export default createContentLoader('posts/*.md', {
         excerpt: frontmatter.excerpt || excerpt || '',
         cover: frontmatter.cover || '',
         tags: frontmatter.tags || [],
-        url
+        url: '/personal-homepage' + url
       }))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   }
