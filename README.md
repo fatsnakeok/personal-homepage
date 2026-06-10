@@ -84,7 +84,7 @@ git add .
 git commit -m "Initial commit"
 
 # 添加远程仓库（替换为你的仓库地址）
-git remote add origin https://github.com/你的用户名/仓库名.git
+git remote add origin https://github.com/fatsnakeok/personal-homepage.git
 
 # 切换到 main 分支
 git branch -M main
