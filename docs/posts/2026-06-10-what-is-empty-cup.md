@@ -2,7 +2,7 @@
 title: 什么是空杯心态？
 date: 2026-06-10
 tags: [成长, 心态, 学习]
-cover: /assets/images/empty-cup.jpg
+cover: /personal-homepage/assets/images/empty-cup.jpg
 excerpt: 空杯心态是一种重要的学习态度，它意味着放下过去的成就和偏见，以开放的心态接纳新的知识和观念。
 ---
 

@@ -35,7 +35,7 @@ defineExpose({ toggleSidebar, isOpen })
         <ProfileCard
           name="空杯学习者"
           bio="保持空杯心态，持续学习成长"
-          avatar="/assets/images/avatar.jpg"
+          avatar="/personal-homepage/assets/images/avatar.jpg"
         />
         
         <Motto text="把心倒空，从容应对所有未知；收藏点滴美好，在岁月里持续成长。" />

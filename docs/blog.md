@@ -32,7 +32,7 @@ const articles = computed(() => {
   <div v-if="route.query?.tag" class="tag-filter">
     <span class="filter-label">当前筛选：</span>
     <span class="filter-tag">{{ route.query.tag }}</span>
-    <a href="/blog" class="filter-clear">清除筛选</a>
+    <a href="/personal-homepage/blog" class="filter-clear">清除筛选</a>
   </div>
   
   <BlogList :articles="articles" />

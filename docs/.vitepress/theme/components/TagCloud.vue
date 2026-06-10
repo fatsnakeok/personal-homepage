@@ -26,7 +26,7 @@ const tags = computed(() => {
       <a
         v-for="tag in tags"
         :key="tag.name"
-        :href="`/blog?tag=${encodeURIComponent(tag.name)}`"
+        :href="`/personal-homepage/blog?tag=${encodeURIComponent(tag.name)}`"
         class="tag-item"
       >
         {{ tag.name }}

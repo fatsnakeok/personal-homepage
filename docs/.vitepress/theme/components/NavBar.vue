@@ -28,7 +28,8 @@ const handleToggle = () => {
       
       <div class="navbar-links">
         <a href="/" class="nav-link">首页</a>
-        <a href="/tags" class="nav-link">标签</a>
+        <a href="/blog" class="nav-link">博客</a>
+        <a href="/resume" class="nav-link">简历</a>
         <a href="/about" class="nav-link">关于</a>
       </div>
 
